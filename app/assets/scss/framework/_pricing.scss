@@ -1,0 +1,114 @@
+.panel-pricing {
+
+	p {
+		@include line-height(20px, 16px);
+		margin-bottom: 22px;
+
+		span {
+			color: $color-ten;
+		}
+	}
+
+	.pricing-summary {
+		@include line-height(21px, 18px);
+	}
+}
+
+.pricing-heading {
+	font-size: 30px;
+	text-transform: uppercase;
+	color: $color-primary;
+	text-align: center;
+	font-family: $font-taviraj;
+	margin-bottom: 40px;
+
+	span {
+		display: block;
+		font-family: $font-lobster;
+		font-weight: 400;
+		text-transform: none;
+		margin-top: 6px;
+		color: $color-seven;
+	}
+}
+
+.pricing-title {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 15px;
+}
+
+.pricing-media {
+	text-align: center;
+}
+
+.pricing-summary {
+	color: $color-black;
+	font-size: 18px;
+}
+
+@include breakpoint(sm) {
+	.panel-pricing {
+		background: url(../images/bg-credibility-pc.jpg) no-repeat 50% 100%;
+		position: relative;
+		padding-top: 55px;
+		padding-bottom: 45px;
+		margin-bottom: 15px;
+		background-size: 100% auto;
+
+		&::after {
+			content: '';
+			display: block;
+			@include size(56px, 48px);
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -28px;
+			@include sprite(0 0);
+		}
+
+		p {
+			margin-bottom: 16px;
+		}
+
+		.pricing-summary {
+			margin-bottom: 22px;
+		}
+
+		.pricing-media {
+			margin-bottom: 44px;
+		}
+	}
+
+	.pricing-block {
+		padding-top: 46px;
+		position: relative;
+		z-index: 2;
+	}
+
+	.pricing-heading {
+		margin-bottom: 25px;
+
+		span {
+			margin-top: 4px;
+		}
+	}
+
+	.pricing-title {
+		margin-top: 43px;
+	}
+}
+
+@include breakpoint(md) {
+	.pricing-block {
+		max-width: 640px;
+		padding-left: 20px;
+	}
+	.panel-pricing {
+		background-size: auto;
+
+		.pricing-media {
+			margin-right: 57px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.footer {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.footer-nav {
+	margin-bottom: 22px;
+}
+
+.footer-copyright {
+	font-size: 14px;
+	color: $color-black;
+	@include line-height(16px, 14px);
+	text-align: center;
+}
+
+@include breakpoint(sm) {
+	.footer-copyright {
+		@include line-height(24px, 14px);
+	}
+}

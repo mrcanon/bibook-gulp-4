@@ -1,0 +1,101 @@
+/*!
+ * Coyote Framework
+ * Copyright 2017 Codeshore, Co-Well Asia
+ * Licensed under MIT
+ */
+
+// Core variables and mixins
+@import 'framework/variables';
+@import 'framework/mixins';
+
+
+/*------------------------------------------------------------------
+[Table of contents]
+1. Reset
+2. Print
+3. Typography
+4. Grid
+5. Button
+6. Header
+7. Navigation
+8. Social
+9. Content
+10. Footer
+98. Print
+99. Helpers
+
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[1. Reset]
+*/
+@import 'framework/normalize';
+
+/*------------------------------------------------------------------
+[2. Font icon]
+*/
+//@import '../../../../coyote-frontend/bower_components/font-awesome/scss/font-awesome';
+
+/*------------------------------------------------------------------
+[3. Typography]
+*/
+@import 'framework/scaffolding';
+@import 'framework/type';
+@import 'framework/code';
+@import 'framework/forms';
+
+/*------------------------------------------------------------------
+[4. Grid]
+*/
+@import 'framework/grid';
+
+/*------------------------------------------------------------------
+[5. Button]
+*/
+//@import 'framework/buttons';
+
+/*------------------------------------------------------------------
+[6. Header]
+*/
+@import 'framework/header';
+
+/*------------------------------------------------------------------
+[7. Navigation
+*/
+@import 'framework/nav-menu';
+@import 'framework/nav-top';
+@import 'framework/nav-social';
+
+/*------------------------------------------------------------------
+[8. Social]
+*/
+//@import 'framework/social';
+
+/*------------------------------------------------------------------
+[9. Content]
+*/
+@import 'framework/reason';
+@import 'framework/solution';
+@import 'framework/course';
+@import 'framework/utility';
+@import 'framework/credibility';
+@import 'framework/pricing';
+@import 'framework/testimonial';
+@import 'framework/join';
+@import 'framework/register';
+@import 'framework/video';
+@import 'framework/modal';
+
+/*------------------------------------------------------------------
+[10. Footer]
+*/
+@import 'framework/footer';
+
+/*------------------------------------------------------------------
+[98. Print]
+*/
+@import 'framework/print';
+
+/*------------------------------------------------------------------
+[99. Helpers]
+*/
+@import 'framework/helpers';

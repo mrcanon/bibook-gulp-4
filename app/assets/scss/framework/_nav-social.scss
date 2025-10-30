@@ -1,0 +1,44 @@
+.nav-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  a {
+    color: $nav-social-link-color;
+    display: block;
+    font-size: 38px;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: color .3s;
+
+    &:hover {
+      color: $nav-social-link-hover-color;
+      text-decoration: none;
+    }
+  }
+
+  .fa-facebook-square {
+    color: #448aff;
+
+    &:hover {
+      color: darken(#448aff, 10%);
+    }
+  }
+
+  .fa-youtube-square {
+    color: #de0000;
+
+    &:hover {
+      color: darken(#de0000, 10%);
+    }
+  }
+}

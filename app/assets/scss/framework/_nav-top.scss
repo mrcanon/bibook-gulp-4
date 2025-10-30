@@ -1,0 +1,62 @@
+.nav-top {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	text-align: center;
+
+	li {
+		display: table-cell;
+	}
+
+	a {
+		display: block;
+		color: $color-white;
+		text-decoration: none;
+		padding: 13px 10px;
+		line-height: 25px;
+		transition: background .3s ease-in-out;
+
+		&:hover {
+			background: $color-link-hover;
+		}
+
+		&::before {
+			content: '';
+			display: inline-block;
+			@include square(24px);
+			margin-right: 12px;
+			vertical-align: middle;
+		}
+	}
+
+	.icon-phone {
+
+		&::before {
+			@include sprite(0 0);
+		}
+	}
+
+	.icon-cart {
+
+		&::before {
+			@include sprite(-24px 0);
+		}
+	}
+
+	.icon-user {
+
+		&::before {
+			@include sprite(-48px 0);
+		}
+	}
+
+	.icon-search {
+
+		&::before {
+			@include sprite(-72px 0);
+		}
+	}
+}

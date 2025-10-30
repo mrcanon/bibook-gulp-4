@@ -1,0 +1,19 @@
+header.header.header-white
+  .container
+    .header-table.header-table-border
+      nav.header-cell.header-cell-large
+        button.header-bars
+          span.header-bars-inner
+        a.header-logo.header-logo-mobile(href="#", title="Basement")
+          img(src="assets/images/header/logo-3.png", alt="Basement", width="170", height="36")
+        include ../navigation/nav-menu-v3.jade
+      .header-cell
+        include ../social/nav-social-v1.jade
+      .header-cell
+        a.header-icon.header-icon-mobile(href="#", title="#")
+          i.fa.fa-search
+        .header-search
+          form(action="index.html")
+            input.header-search-control(type="text", name="search")
+            button.header-search-button(type="submit")
+              i.fa.fa-search

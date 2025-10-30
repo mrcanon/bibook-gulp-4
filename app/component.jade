@@ -1,0 +1,235 @@
+extends layouts/full-width.jade
+block head
+  +head(
+  'Component | Bibook',
+  'description',
+  'keywords',
+  'description_social',
+  'image_social',
+  'url_social',
+  'type_social'
+  )
+block css
+  | <!--build:css assets/css/jquery.fancybox.css-->
+  | <link rel="stylesheet" href="assets/css/jquery.fancybox.css">
+  | <!-- endbuild -->
+  | <!--build:css assets/css/owl.carousel.min.css-->
+  | <link rel="stylesheet" href="bower_components/owl.carousel/dist/assets/owl.carousel.min.css">
+  | <!-- endbuild -->
+block content
+  .modal.modal-register#modal-register
+    .row
+      .col-sm-4
+      .col-sm-8
+        ul.step-list
+          li.step-item.step-active.step-finish
+            .step-number 1
+            .step-desc TẠO TÀI KHOẢN
+          li.step-item
+            .step-number 2
+            .step-desc THANH TOÁN
+    .row
+      .col-sm-4
+      .col-sm-8
+        h3.modal-heading TẠO TÀI KHOẢN
+    form#register-form(action="index.html")
+      .row
+        .col-sm-4
+          label.modal-label(for="reg_phone") Điện thoại*
+        .col-sm-8
+          .form-group
+            input.modal-control#reg_phone(type="tel", name="reg_phone", value="0978 665 423")
+      .row
+        .col-sm-4
+          label.modal-label(for="reg_name") Họ tên*
+        .col-sm-8
+          .form-group
+            input.modal-control#reg_name(type="text", name="reg_name", value="Lê Kim Lan")
+      .row
+        .col-sm-4
+          label.modal-label(for="reg_pass") Mật khẩu*
+        .col-sm-8
+          .form-group
+            input.modal-control#reg_pass(type="password", name="reg_pass")
+      .row
+        .col-sm-4
+          label.modal-label(for="reg_pass_confirm") Xác nhận mật khẩu*
+        .col-sm-8
+          .form-group
+            input.modal-control#reg_pass_confirm(type="password", name="reg_pass_confirm")
+      .row
+        .col-sm-4
+        .col-sm-8
+          .modal-recaptcha
+            .g-recaptcha(data-sitekey="6LcmixgUAAAAAAg6htRuGgwpYeU8P3MI3tk0cROZ")
+      .row
+        .col-sm-2
+        .col-sm-10
+          .modal-notice
+            p Số điện thoại sẽ chính là tài khoản đăng nhập của bạn hãy chắc chắn rằng bạn đã nhập đúng số điện thoại của mình
+      .row
+        .col-sm-4
+        .col-sm-8
+          .modal-handle
+            button.modal-submit(type="submit") TẠO TÀI KHOẢN & THANH TOÁN
+          .modal-other Bạn đã có tài khoản? <a href="#" title="Đăng nhập">Đăng nhập</a>
+
+  .modal.modal-payment#modal-payment
+    ul.step-list
+      li.step-item.step-active.step-finish
+        .step-number 1
+        .step-desc TẠO TÀI KHOẢN
+      li.step-item.step-active
+        .step-number 2
+        .step-desc THANH TOÁN
+    .modal-message Chúc mừng <span>Lê Kim Lan</span> đã tạo tài khoản thành công
+    h3.modal-heading thanh toán
+    .modal-suggest Chọn một trong các hình thức thanh toán dưới đây
+    ul.modal-method
+      li
+        a.modal-table(href="#modal-delivery", data-modal="show")
+          span.modal-cell
+            span.payment-title Thanh toán qua chuyển khoản online (internet banking)
+            span.payment-desc Bạn sẽ được tặng 100K vào tài khoản nếu chọn hình thức thanh toán này
+      li
+        a.modal-table(href="#modal-recharge", data-modal="show")
+          span.modal-cell
+            span.payment-title Thanh toán qua thẻ cào điện thoại (Viettel, Vina, Mobi)
+      li
+        a.modal-table(href="#modal-delivery", data-modal="show")
+          span.modal-cell
+            span.payment-title Giao hàng tận nhà (Nhận thẻ rồi thanh toán)
+            span.payment-desc Bạn sẽ nhận được thẻ sau 1 đến 3 ngày
+
+
+  .modal.modal-recharge#modal-recharge
+    .row
+      .col-sm-3
+      .col-sm-9
+        ul.step-list
+          li.step-item.step-active.step-finish
+            .step-number 1
+            .step-desc TẠO TÀI KHOẢN
+          li.step-item.step-active
+            .step-number 2
+            .step-desc THANH TOÁN
+    h3.modal-heading thanh toán
+    p.modal-message-card Bạn đã nạp thành công: <span class="modal-pricing-success">300.000 đồng</span>.<br>Còn thiếu <span class="modal-pricing-missing">199.000 đồng</span> nữa để thanh toán chương trình THAI GIÁO
+    p.modal-message-phone Thanh toán qua thẻ cào điện thoại - chọn loại thẻ
+    form#recharge-form(action="index.html", data-form="validate")
+      .modal-group.modal-group-radio
+        label.modal-radio
+          input(type="radio", name="networking", checked=true)
+          span Mobifone
+        label.modal-radio
+          input(type="radio", name="networking")
+          span Vinaphone
+        label.modal-radio
+          input(type="radio", name="networking")
+          span Viettel
+      .row
+        .col-sm-3
+          label.modal-label(for="card_series") Số series
+        .col-sm-9
+          .form-group
+            input.modal-control#card_series(type="number", name="card_series")
+      .row
+        .col-sm-3
+          label.modal-label(for="card_pin") Số PIN (mã thẻ)
+        .col-sm-9
+          .form-group
+            input.modal-control#card_pin(type="number", name="card_pin")
+            p.modal-recharge-sugget Cào lớp phủ bạc bạn sẽ thấy số PIN <br>Số series là dãy số in sẵn bên ngoài lớp phủ bạc
+      .row
+        .col-sm-3
+        .col-sm-9
+          .modal-handle
+            button.modal-submit(type="submit") NẠP THẺ
+          a.modal-back(href="#modal-payment", data-modal="show") Quay lại chọn hình thức thanh toán khác
+
+  .modal.modal-refill#modal-refill
+    ul.step-list
+      li.step-item.step-active.step-finish
+        .step-number 1
+        .step-desc TẠO TÀI KHOẢN
+      li.step-item.step-active
+        .step-number 2
+        .step-desc THANH TOÁN
+    h3.modal-heading thanh toán
+    p.modal-message-card Bạn đã nạp thành công: <span class="modal-pricing-success">500.000 đồng</span>.<br>Số tiền để mua chương trình THAI GIÁO là <span class="modal-pricing-need">499.000 đồng</span><br>(Bạn sẽ còn dư <span class="modal-pricing-residual">1000 đồng</span> trong tài khoản)
+    p.modal-message-phone Thanh toán qua thẻ cào điện thoại - chọn loại thẻ
+    .modal-handle
+      a.modal-submit#modal-realized(href="#modal-finish") THANH TOÁN CHƯƠNG TRÌNH THAI GIÁO
+
+  .modal.modal-finish#modal-finish
+    ul.step-list
+      li.step-item.step-active.step-finish
+        .step-number 1
+        .step-desc TẠO TÀI KHOẢN
+      li.step-item.step-active.step-finish
+        .step-number 2
+        .step-desc THANH TOÁN
+    p.modal-message-success Chúc mừng bạn đã mua thành công chương trình <br>THAI GIÁO
+    .modal-handle
+      a.modal-submit#modal-watch(href="#") VÀO XEM CHƯƠNG TRÌNH
+
+  .modal.modal-delivery#modal-delivery
+    .row
+      .col-sm-3
+      .col-sm-9
+        ul.step-list
+          li.step-item.step-active.step-finish
+            .step-number 1
+            .step-desc TẠO TÀI KHOẢN
+          li.step-item.step-active
+            .step-number 2
+            .step-desc THANH TOÁN
+    h3.modal-heading thanh toán
+    p.modal-message-delivery <span>Giao hàng tận nơi - nhận thẻ rồi thanh toán </span><br>(Bạn sẽ nhận được thẻ trong 24h nếu ở Hà Nội - các tỉnh thành khác là 2-3 ngày<br>Thẻ được giao trong giờ hành chính - các tỉnh ngoài Hà Nội không tính thứ 7 - Chủ Nhật)
+    form#delivery-form(action="index.html", data-form="validate")
+      .row
+        .col-sm-3
+          label.modal-label(for="delivery_name") Tên người nhận thẻ
+        .col-sm-9
+          .form-group
+            input.modal-control#delivery_name(type="text", name="delivery_name", value="Lê Kim Lan")
+      .row
+        .col-sm-3
+          label.modal-label(for="delivery_phone") Số điện thoại liên hệ
+        .col-sm-9
+          .form-group
+            input.modal-control#delivery_phone(type="number", name="delivery_phone", value="0978 665 423")
+      .row
+        .col-sm-3
+          label.modal-label(for="delivery_address") Địa chỉ nhận thẻ
+        .col-sm-9
+          .form-group
+            textarea.modal-control#delivery_address(name="delivery_address")
+      .row
+        .col-sm-3
+          label.modal-label(for="delivery_note") Ghi chú
+        .col-sm-9
+          .form-group
+            input.modal-control#delivery_note(type="text", name="delivery_note")
+      .row
+        .col-sm-3
+        .col-sm-9
+          .modal-handle
+            button.modal-submit(type="submit") ĐẶT MUA THẺ
+          a.modal-back(href="#modal-payment", data-modal="show") Quay lại chọn hình thức thanh toán khác
+block script
+  | <!--build:js assets/js/vendor/owl.carousel.min.js-->
+  | <script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  | <!-- endbuild -->
+  | <!--build:js assets/js/vendor/jquery.countdown.min.js-->
+  | <script src="bower_components/jquery.countdown/dist/jquery.countdown.min.js"></script>
+  | <!-- endbuild -->
+  | <!--build:js assets/js/vendor/jquery.fancybox.pack.js-->
+  | <script src="assets/js/vendor/jquery.fancybox.pack.js"></script>
+  | <!-- endbuild -->
+  | <!--build:js assets/js/vendor/jquery.mousewheel-3.0.6.pack.js-->
+  | <script src="assets/js/vendor/jquery.mousewheel-3.0.6.pack.js"></script>
+  | <!-- endbuild -->
+  | <!--build:js assets/js/vendor/jquery.validate.min.js-->
+  | <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+  | <!-- endbuild -->
